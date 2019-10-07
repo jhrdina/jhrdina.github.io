@@ -1,1 +1,668 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Polymer Starter Kit"><title>Jan Hrdina - Student, Vývojář</title><meta name="theme-color" content="#616161"><meta name="msapplication-TileColor" content="#616161"><link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png"><link rel="stylesheet" href="styles/main.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=latin-ext"><script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script><link rel="import" href="elements/elements.html"><style is="custom-style" include="shared-styles"></style></head><body><span id="browser-sync-binding"></span><header><div class="title-box"><h1>Jan Hrdina</h1><p class="subtitle">student, vývojář</p></div></header><template is="dom-bind" id="app"><div class="container"><section><h2>Projekty</h2><jh-projects-grid projects="[[projects]]"></jh-projects-grid></section><section><h2>Ostatní</h2><jh-projects-grid projects="[[others]]"></jh-projects-grid></section><footer><p>Najdete mě na <a href="https://bitbucket.org/jhrdina/" target="_blank"><paper-icon-button icon="jh:bitbucket" title="BitBucket"></paper-icon-button></a> <a href="https://github.com/jhrdina" target="_blank"><paper-icon-button icon="jh:github" title="GitHub"></paper-icon-button></a></p><p class="copyright">Copyright &copy; 2016 Jan Hrdina</p></footer></div></template><script src="scripts/app.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"/><meta name="theme-color" content="#ff6d00"/><link rel="icon" href="/static/favicon.ico"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"/><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/><meta charSet="utf-8"/><title>Jan Hrdina - full-stack vývojář</title><meta name="next-head-count" content="3"/><link rel="preload" href="/_next/static/qzO4OyXS6m2tsNw3SRapt/pages/index.js" as="script"/><link rel="preload" href="/_next/static/qzO4OyXS6m2tsNw3SRapt/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-035ac2b14bde147cb4a8.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.e702e2f580a257ee77e2.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-cf91eacce8e1230a729e.js" as="script"/><style id="__jsx-1728803567">.container.jsx-1728803567{max-width:340px;margin:0 auto;box-sizing:border-box;padding:0 20px;}@media (min-width:680px){.container.jsx-1728803567{max-width:660px;}}@media (min-width:1000px){.container.jsx-1728803567{max-width:980px;}}@media (min-width:1320px){.container.jsx-1728803567{max-width:1300px;}}header.jsx-1728803567{background-color:#616161;color:#fff;text-align:center;overflow:hidden;box-shadow:0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.4);}header.jsx-1728803567 .title-box.jsx-1728803567{margin:17px 13px 20px 13px;}header.jsx-1728803567 h1.jsx-1728803567{font-size:32pt;line-height:1;margin:0;}header.jsx-1728803567 .subtitle.jsx-1728803567{font-size:10pt;font-weight:500;color:#ffab40;margin:0;}section.jsx-1728803567 h2.jsx-1728803567{color:rgba(0,0,0,0.87);font-size:25pt;font-weight:200;border-bottom:1px solid rgba(0,0,0,0.12);padding-bottom:0.4em;margin:20px 0;}footer.jsx-1728803567{color:#737373;text-align:center;font-size:16px;padding:20px 0;border-top:1px solid rgba(0,0,0,0.12);}footer.jsx-1728803567 p.jsx-1728803567{margin:0;}footer.jsx-1728803567 a.jsx-1728803567{display:inline-block;color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit;line-height:0;}footer.jsx-1728803567 .copyright.jsx-1728803567{color:#9b9b9b;font-size:12px;margin-top:4px;}</style><style id="jss-server-side">.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #ff6d00;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #f50057;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #f44336;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.MuiButton-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-root:hover.Mui-disabled {
+    background-color: transparent;
+  }
+  .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .MuiButton-text {
+    padding: 6px 8px;
+  }
+  .MuiButton-textPrimary {
+    color: #ff6d00;
+  }
+  .MuiButton-textPrimary:hover {
+    background-color: rgba(255, 109, 0, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-textSecondary {
+    color: #f50057;
+  }
+  .MuiButton-textSecondary:hover {
+    background-color: rgba(245, 0, 87, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 5px 15px;
+  }
+  .MuiButton-outlined.Mui-disabled {
+    border: 1px solid rgba(0, 0, 0, 0.26);
+  }
+  .MuiButton-outlinedPrimary {
+    color: #ff6d00;
+    border: 1px solid rgba(255, 109, 0, 0.5);
+  }
+  .MuiButton-outlinedPrimary:hover {
+    border: 1px solid #ff6d00;
+    background-color: rgba(255, 109, 0, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlinedSecondary {
+    color: #f50057;
+    border: 1px solid rgba(245, 0, 87, 0.5);
+  }
+  .MuiButton-outlinedSecondary:hover {
+    border: 1px solid #f50057;
+    background-color: rgba(245, 0, 87, 0.08);
+  }
+  .MuiButton-outlinedSecondary.Mui-disabled {
+    border: 1px solid rgba(0, 0, 0, 0.26);
+  }
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-contained {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+  .MuiButton-contained:hover {
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+    background-color: #d5d5d5;
+  }
+  .MuiButton-contained.Mui-focusVisible {
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  }
+  .MuiButton-contained:active {
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+  }
+  .MuiButton-contained.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+}
+  .MuiButton-contained:hover.Mui-disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  .MuiButton-containedPrimary {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #ff6d00;
+  }
+  .MuiButton-containedPrimary:hover {
+    background-color: rgb(178, 76, 0);
+  }
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #ff6d00;
+  }
+}
+  .MuiButton-containedSecondary {
+    color: #fff;
+    background-color: #f50057;
+  }
+  .MuiButton-containedSecondary:hover {
+    background-color: #c51162;
+  }
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #f50057;
+  }
+}
+  .MuiButton-colorInherit {
+    color: inherit;
+    border-color: currentColor;
+  }
+  .MuiButton-textSizeSmall {
+    padding: 4px 5px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-textSizeLarge {
+    padding: 8px 11px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-outlinedSizeSmall {
+    padding: 3px 9px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-outlinedSizeLarge {
+    padding: 7px 21px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-containedSizeSmall {
+    padding: 4px 10px;
+    font-size: 0.8125rem;
+  }
+  .MuiButton-containedSizeLarge {
+    padding: 8px 22px;
+    font-size: 0.9375rem;
+  }
+  .MuiButton-fullWidth {
+    width: 100%;
+  }
+  .MuiButton-startIcon {
+    display: inherit;
+    margin-left: -4px;
+    margin-right: 8px;
+  }
+  .MuiButton-endIcon {
+    display: inherit;
+    margin-left: 8px;
+    margin-right: -4px;
+  }
+  .MuiButton-iconSizeSmall > *:first-child {
+    font-size: 18px;
+  }
+  .MuiButton-iconSizeMedium > *:first-child {
+    font-size: 20px;
+  }
+  .MuiButton-iconSizeLarge > *:first-child {
+    font-size: 22px;
+  }
+  .MuiPaper-root {
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+  }
+  .MuiPaper-rounded {
+    border-radius: 4px;
+  }
+  .MuiPaper-elevation0 {
+    box-shadow: none;
+  }
+  .MuiPaper-elevation1 {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation2 {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation3 {
+    box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation4 {
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation5 {
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation6 {
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation7 {
+    box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation8 {
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation9 {
+    box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation10 {
+    box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation11 {
+    box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation12 {
+    box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation13 {
+    box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation14 {
+    box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation15 {
+    box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation16 {
+    box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation17 {
+    box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation18 {
+    box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation19 {
+    box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation20 {
+    box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation21 {
+    box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation22 {
+    box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation23 {
+    box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+  }
+  .MuiPaper-elevation24 {
+    box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+  }
+  .MuiCard-root {
+    overflow: hidden;
+  }
+  .MuiCardActions-root {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+  }
+  .MuiCardActions-spacing > * + * {
+    margin-left: 8px;
+  }
+  .MuiCardContent-root {
+    padding: 16px;
+  }
+  .MuiCardContent-root:last-child {
+    padding-bottom: 24px;
+  }
+  .MuiCardMedia-root {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .MuiCardMedia-media {
+    width: 100%;
+  }
+  .MuiCardMedia-img {
+    object-fit: cover;
+  }
+  .MuiIconButton-root {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 12px;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+  }
+  .MuiIconButton-root:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  .MuiIconButton-root.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+  }
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-edgeStart {
+    margin-left: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+    margin-left: -3px;
+  }
+  .MuiIconButton-edgeEnd {
+    margin-right: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+    margin-right: -3px;
+  }
+  .MuiIconButton-colorInherit {
+    color: inherit;
+  }
+  .MuiIconButton-colorPrimary {
+    color: #ff6d00;
+  }
+  .MuiIconButton-colorPrimary:hover {
+    background-color: rgba(255, 109, 0, 0.08);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-colorSecondary {
+    color: #f50057;
+  }
+  .MuiIconButton-colorSecondary:hover {
+    background-color: rgba(245, 0, 87, 0.08);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-sizeSmall {
+    padding: 3px;
+    font-size: 1.125rem;
+  }
+  .MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .MuiTypography-root {
+    margin: 0;
+  }
+  .MuiTypography-body2 {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+  }
+  .MuiTypography-body1 {
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+  }
+  .MuiTypography-caption {
+    font-size: 0.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+  }
+  .MuiTypography-button {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+  }
+  .MuiTypography-h1 {
+    font-size: 6rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01562em;
+  }
+  .MuiTypography-h2 {
+    font-size: 3.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.00833em;
+  }
+  .MuiTypography-h3 {
+    font-size: 3rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: 0em;
+  }
+  .MuiTypography-h4 {
+    font-size: 2.125rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.00735em;
+  }
+  .MuiTypography-h5 {
+    font-size: 1.5rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.33;
+    letter-spacing: 0em;
+  }
+  .MuiTypography-h6 {
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+  }
+  .MuiTypography-subtitle1 {
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+  }
+  .MuiTypography-subtitle2 {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: 0.00714em;
+  }
+  .MuiTypography-overline {
+    font-size: 0.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 2.66;
+    letter-spacing: 0.08333em;
+    text-transform: uppercase;
+  }
+  .MuiTypography-srOnly {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+  .MuiTypography-alignLeft {
+    text-align: left;
+  }
+  .MuiTypography-alignCenter {
+    text-align: center;
+  }
+  .MuiTypography-alignRight {
+    text-align: right;
+  }
+  .MuiTypography-alignJustify {
+    text-align: justify;
+  }
+  .MuiTypography-noWrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .MuiTypography-gutterBottom {
+    margin-bottom: 0.35em;
+  }
+  .MuiTypography-paragraph {
+    margin-bottom: 16px;
+  }
+  .MuiTypography-colorInherit {
+    color: inherit;
+  }
+  .MuiTypography-colorPrimary {
+    color: #ff6d00;
+  }
+  .MuiTypography-colorSecondary {
+    color: #f50057;
+  }
+  .MuiTypography-colorTextPrimary {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .MuiTypography-colorTextSecondary {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .MuiTypography-colorError {
+    color: #f44336;
+  }
+  .MuiTypography-displayInline {
+    display: inline;
+  }
+  .MuiTypography-displayBlock {
+    display: block;
+  }
+  .jss4 {
+    flex: 1;
+  }
+  .jss5 {
+    padding: 6px;
+  }
+  .jss6 {
+    border-top: 1px solid #e8e8e8;
+  }
+  .jss2 {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: start;
+    margin-left: -10px;
+    margin-right: -10px;
+    flex-direction: row;
+  }
+  .jss3 {
+    width: 300px;
+    margin: 0 10px 20px 10px;
+  }
+  .jss120 {
+    height: 140px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #808080;
+  }
+  .jss121 {
+    width: auto;
+    height: 140px;
+  }
+  .jss122 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+  }
+  .jss123 {
+    background-color: #ffffff;
+  }
+  .jss1 {
+    padding: 0;
+  }
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+strong, b {
+  font-weight: bolder;
+}
+body {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  background-color: #eeeeee;
+}
+@media print {
+  body {
+    background-color: #fff;
+  }
+}
+body::backdrop {
+  background-color: #eeeeee;
+}</style></head><body><div id="__next"><div class="jsx-1728803567"><header class="jsx-1728803567"><div class="jsx-1728803567 title-box"><h1 class="jsx-1728803567">Jan Hrdina</h1><p class="jsx-1728803567 subtitle">full-stack vývojář</p></div></header><div class="jsx-1728803567 container"><section class="jsx-1728803567"><h2 class="jsx-1728803567">Dokončené projekty</h2><div class="jss2"><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/pocketmesh.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">PocketMesh<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Framework pro tvorbu kolaborativních P2P editorů bez nutnosti svěřovat data centrálnímu úložišti.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/pocket-mesh" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Wiki" href="https://pocket-mesh.hrdinajan.cz/" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path></svg></span></a><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Diplomová práce" href="https://www.vutbr.cz/studenti/zav-prace?zp_id=122081" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/azkviz.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">AZKvíz<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Jednoduchá hra nejen pro použití ve výuce inspirovaná českou televizní show AZ-kvíz.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="https://azkviz.hrdinajan.cz" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/azkviz" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/alllangs.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">All Languages<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Časté konstrukce zapsané v různých programovacích jazycích.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="https://alllangs.hrdinajan.cz" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/alllangs" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/lenka.jpg"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">Web Fyzioterapie Lenka Hrdinová<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Responzivní webová prezentace postavená na CSS frameworku Bootstrap a redakčním systému Bolt.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="http://fyzio-h.cz" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div></div></div></div></section><section class="jsx-1728803567"><h2 class="jsx-1728803567">Prototypy a experimenty</h2><div class="jss2"><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/treeburst.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">TreeBurst<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Kolaborativní P2P editor pro tvorbu myšlenkových map. Ukázkový projekt k vlastnímu frameworku PocketMesh.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="https://tree-burst.hrdinajan.cz/" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/tree-burst" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Diplomová práce" href="https://www.vutbr.cz/studenti/zav-prace?zp_id=122081" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/itu.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">Editor tabulek<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Uživatelské rozhraní editoru na návrh SQL schémat implementované jako týmový projekt do předmětu ITU s využitím frameworku Polymer.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="http://tables-editor.hrdinajan.cz" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/tables-editor" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/graphide.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">Graphide<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> </span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Prototyp dynamického vizuálního editoru pro JavaScript inspirovaný UML diagramy tříd.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><a class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" aria-disabled="false" href="https://www.hrdinajan.cz/graphide/" target="_blank" rel="noopener"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8 5v14l11-7z"></path></svg></span>Otevřít</span></a><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://github.com/jhrdina/graphide" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a></div></div><div class="MuiPaper-root MuiPaper-elevation1 MuiCard-root jss3 MuiPaper-rounded"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img" src="/static/images/mayto.png"/><div class="MuiCardContent-root"><h2 class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary">Mayto<span class="MuiTypography-root MuiTypography-caption MuiTypography-colorPrimary"> <!-- -->(ve vývoji)</span></h2><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary">Univerzální aplikace na správu poznámek s podporou více pohledů na stejná data.</p></div><div class="MuiCardActions-root jss6 MuiCardActions-spacing"><div class="jss4"></div><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Zdrojový kód" href="https://bitbucket.org/jhrdina/mayto" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg></span></a><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Wiki" href="https://trello.com/b/uGTpZ35S" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path></svg></span></a><a class="MuiButtonBase-root MuiIconButton-root jss5 MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" title="Bakalářská práce" href="https://www.vutbr.cz/www_base/zav_prace_soubor_verejne.php?file_id=132130" target="_blank" rel="noopener"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"></path></svg></span></a></div></div></div></section><footer class="jsx-1728803567"><p class="jsx-1728803567">Najdete mě na<!-- --> <a class="MuiButtonBase-root MuiIconButton-root jss1" tabindex="0" aria-disabled="false" title="BitBucket" href="https://bitbucket.org/jhrdina/" target="_blank"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12,5.76C15.06,5.77 17.55,5.24 17.55,4.59C17.55,3.94 15.07,3.41 12,3.4C8.94,3.4 6.45,3.92 6.45,4.57C6.45,5.23 8.93,5.76 12,5.76M12,14.4C13.5,14.4 14.75,13.16 14.75,11.64A2.75,2.75 0 0,0 12,8.89C10.5,8.89 9.25,10.12 9.25,11.64C9.25,13.16 10.5,14.4 12,14.4M12,2C16.77,2 20.66,3.28 20.66,4.87C20.66,5.29 19.62,11.31 19.21,13.69C19.03,14.76 16.26,16.33 12,16.33V16.31L12,16.33C7.74,16.33 4.97,14.76 4.79,13.69C4.38,11.31 3.34,5.29 3.34,4.87C3.34,3.28 7.23,2 12,2M18.23,16.08C18.38,16.08 18.53,16.19 18.53,16.42V16.5C18.19,18.26 17.95,19.5 17.91,19.71C17.62,21 15.07,22 12,22V22C8.93,22 6.38,21 6.09,19.71C6.05,19.5 5.81,18.26 5.47,16.5V16.42C5.47,16.19 5.62,16.08 5.77,16.08C5.91,16.08 6,16.17 6,16.17C6,16.17 8.14,17.86 12,17.86C15.86,17.86 18,16.17 18,16.17C18,16.17 18.09,16.08 18.23,16.08M13.38,11.64C13.38,12.4 12.76,13 12,13C11.24,13 10.62,12.4 10.62,11.64A1.38,1.38 0 0,1 12,10.26A1.38,1.38 0 0,1 13.38,11.64Z"></path></svg></span></a> <a class="MuiButtonBase-root MuiIconButton-root jss1" tabindex="0" aria-disabled="false" title="GitHub" href="https://github.com/jhrdina" target="_blank"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></span></a> <a class="MuiButtonBase-root MuiIconButton-root jss1" tabindex="0" aria-disabled="false" title="LinkedIn" href="https://www.linkedin.com/in/jan-hrdina-1b4156151/" target="_blank"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"></path></svg></span></a></p><p class="jsx-1728803567 copyright">Copyright © 2019 Jan Hrdina</p></footer></div><div class="jss120"><div class="jss122"><a class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-contained jss123" tabindex="0" aria-disabled="false" href="https://www.flickr.com/photos/141464170@N04" target="_blank" rel="noopener"><span class="MuiButton-label">Fotky mám na Flickru…</span></a></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"dataManager":"[]","props":{"pageProps":{}},"page":"/","query":{},"buildId":"qzO4OyXS6m2tsNw3SRapt","nextExport":true,"autoExport":true}</script><script async="" data-next-page="/" src="/_next/static/qzO4OyXS6m2tsNw3SRapt/pages/index.js"></script><script async="" data-next-page="/_app" src="/_next/static/qzO4OyXS6m2tsNw3SRapt/pages/_app.js"></script><script src="/_next/static/runtime/webpack-035ac2b14bde147cb4a8.js" async=""></script><script src="/_next/static/chunks/commons.e702e2f580a257ee77e2.js" async=""></script><script src="/_next/static/runtime/main-cf91eacce8e1230a729e.js" async=""></script></body></html>
